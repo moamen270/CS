@@ -131,6 +131,10 @@ namespace ConsoleApp3
 
         static void Main(string[] args)
         {
+            Console.WriteLine("This is Encryption App");
+            Console.WriteLine("Key and Message should be only Numbers");
+            Console.WriteLine("Key's range is 10 Numbers from 0 to 9, Repetition is not allowed");
+            Console.WriteLine("===================================================================");
             Console.WriteLine("Enter The Key");
             Key S1 = new Key(Console.ReadLine());
             Console.WriteLine("Enter the Message");
