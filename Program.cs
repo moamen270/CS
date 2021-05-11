@@ -2,13 +2,13 @@
 namespace ConsoleApp3
 {
     class Program
-    { 
+    {
         // Every thing about the Key 
-        public  class Key
+        public class Key
         {
             public string sKey;
             public int[] intKey;
-            
+
             // Constructor to create the key as a string 
             public Key(string sKey)
             {
@@ -23,20 +23,20 @@ namespace ConsoleApp3
                 Console.WriteLine("Please Re-Enter The Key");
                 sKey = Console.ReadLine();
                 RgCheck();
-                
+
             }
             // Checking the range of the key 
             public void RgCheck()
             {
                 // the range is 10 no less no more 
-               if (sKey.Length != 10)
+                if (sKey.Length != 10)
                 {
                     Console.WriteLine("NOT ALLOWED, ONLY 10 NUMBER FROM 0 TO 9 ");
                     // if the range less or more than 10 calling Re-Entring Method
                     KeyRe();
                 }
             }
-            
+
             // Convert StringKey to CharArray then grom CharrArray to intArray
             public void arrMethKey()
             {
@@ -46,13 +46,13 @@ namespace ConsoleApp3
                 {   // useing Try-Catch for Run time Error 
                     // if user entered Characters 
                     try
-                    {   
+                    {
                         // useing TOString to convert every single Char to string because Pares take string value only 
-                         // useing Parse to convert from string to int 
+                        // useing Parse to convert from string to int 
                         intKey[i] = int.Parse(v1[i].ToString());
                     }
                     catch
-                    {   
+                    {
                         // if user enterd an character start the Method
                         intKeyCheck();
                     }
@@ -61,14 +61,14 @@ namespace ConsoleApp3
                 KeyDupCheck();
             }
             public void KeyDupCheck()
-            {   
+            {
                 int Edup = 0;
                 for (int i = 0; i < 10; i++)
                 {
                     for (int j = 9; j > i; j--)
                     {
                         if (intKey[i] == intKey[j])
-                        {   
+                        {
                             // if we have one dublicateError break the loop and do action
                             Edup = 1;
                             break;
@@ -77,25 +77,25 @@ namespace ConsoleApp3
                     if (Edup == 1) break;
 
                 }
-                if (Edup==1)
+                if (Edup == 1)
                 {
                     Console.WriteLine("Not Allowed,Key: duplicate number ");
                     // Call ReEntring Method then start From the beginning
                     KeyRe();
                     arrMethKey();
-                    
+
                 }
-               
+
             }
-            
+
             public void intKeyCheck()
             {
-                    Console.WriteLine("NOT ALLOWED, Please Enter Numbers Only!");
-                    // Call ReEntring Method then start From the beginning
-                    KeyRe();
-                    arrMethKey();
+                Console.WriteLine("NOT ALLOWED, Please Enter Numbers Only!");
+                // Call ReEntring Method then start From the beginning
+                KeyRe();
+                arrMethKey();
             }
-        
+
 
         }
         //Every thing aboud the Message 
@@ -104,7 +104,7 @@ namespace ConsoleApp3
 
             public string sMess;
             public int[] intMess;
-            
+
             // constructor to create the message as a string
             public Message(string sMess)
             {
@@ -120,12 +120,12 @@ namespace ConsoleApp3
             }
             public void arrMethMess()
             {
-                
+
                 char[] v2 = new char[sMess.Length];
                 v2 = sMess.ToCharArray();
                 // useing Try-Catch for Run time Error 
                 // if user entered Characters 
-                try 
+                try
                 {
                     for (int i = 0; i < sMess.Length; i++)
                     {
@@ -137,17 +137,17 @@ namespace ConsoleApp3
                 }
                 catch
                 {
-                     // if user enterd an character start the Method
+                    // if user enterd an character start the Method
                     intMessCheck();
                 }
 
             }
             public void intMessCheck()
-            {                
-                    Console.WriteLine("NOT ALLOWED, Please Enter Numbers Only!");
-                    // Call ReEntring Method 
-                    messRe();
-                    arrMethMess();              
+            {
+                Console.WriteLine("NOT ALLOWED, Please Enter Numbers Only!");
+                // Call ReEntring Method 
+                messRe();
+                arrMethMess();
             }
         }
 
